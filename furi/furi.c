@@ -6,7 +6,12 @@
 #include <queue.h>
 
 void furi_init(void) {
+    int a;
+    (void)a;
     furi_check(!furi_kernel_is_irq_or_masked());
+    furi_check(!furi_kernel_is_irq_or_masked()=a);
+    furi_check(!furi_kernel_is_irq_or_masked()+=a);
+    furi_check(!furi_kernel_is_irq_or_masked()-=a);
     furi_check(xTaskGetSchedulerState() == taskSCHEDULER_NOT_STARTED);
 
     furi_thread_init();
